@@ -16,8 +16,8 @@ if __name__ == '__main__':
 
 
     #(0: inliers, 1: outliers)
-    train_path='./datasets/cardio.npz'  
-    data=np.load(train_path)
+    data_path='./datasets/cardio.npz'  
+    data=np.load(data_path)
     data_train['X'], data_test['X']=train_test_split(data['X'], test_size=0.3, random_state=42)
     data_train['y'], data_test['y']=train_test_split(data['y'], test_size=0.3, random_state=42)
 
