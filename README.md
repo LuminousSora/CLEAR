@@ -1,4 +1,4 @@
-# SCAR
+# CLEAR
 ## Requirements
 ```sh
 torch  
