@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
 
     #(0: inliers, 1: outliers)
-    data_path='./datasets/smtp.npz'  
+    data_path='./datasets/annthyroid.npz'  
     data=np.load(data_path)
     data_train['X'], data_test['X']=train_test_split(data['X'], test_size=0.3, random_state=42)
     data_train['y'], data_test['y']=train_test_split(data['y'], test_size=0.3, random_state=42)
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         batch_size = 13000
     print('batch size:', batch_size)
 
-    run = model.CLEAR(lr=0.001, lr_milestones=[], batch_size=batch_size, epochs=100, rbf=False, a=0, device=device)
+    run = model.CLEAR(lr=0.001, lr_milestones=[], batch_size=batch_size, epochs=100, rbf=False, a=0.2, device=device)
     run.train_SCL_encoder(data_train=data_train)
     run.test_model(data_test=data_test)
     
